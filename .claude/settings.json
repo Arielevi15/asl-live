@@ -1,0 +1,55 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git status)",
+      "Bash(git log *)",
+      "Bash(git diff *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git switch -c *)",
+      "Bash(git checkout -b *)",
+      "Bash(pytest *)",
+      "Bash(python -m pytest *)",
+      "Bash(node --test *)",
+      "Bash(ruff *)",
+      "Bash(pre-commit run *)",
+      "Bash(pip install -e .)",
+      "Bash(python -m asl.*)",
+      "Bash(python -m http.server *)",
+      "Bash(gh issue list *)",
+      "Bash(gh issue view *)",
+      "Bash(gh pr view *)",
+      "Bash(gh pr checks *)",
+      "Bash(gh pr create *)"
+    ],
+    "ask": [
+      "Bash(git push *)",
+      "Bash(git tag *)",
+      "Bash(git branch -d *)",
+      "Bash(git branch -D *)",
+      "Bash(pip install *)",
+      "Bash(npm install *)",
+      "Bash(npm i *)",
+      "Bash(python scripts/make_fixtures.py*)",
+      "Edit(/src/asl/features.py)",
+      "Edit(/web/features.js)",
+      "Edit(/tests/fixtures/**)",
+      "Edit(/CLAUDE.md)"
+    ],
+    "deny": [
+      "Bash(git push --force*)",
+      "Bash(git push -f*)",
+      "Bash(git push * --force*)",
+      "Bash(git push origin main*)",
+      "Bash(git push origin HEAD:main*)",
+      "Bash(git reset --hard*)",
+      "Bash(git commit * --no-verify*)",
+      "Bash(gh pr merge*)",
+      "Read(/.env)",
+      "Read(/.env.*)",
+      "Read(**/kaggle.json)",
+      "Read(~/.kaggle/**)",
+      "Read(/data/recordings/test/**)"
+    ]
+  }
+}

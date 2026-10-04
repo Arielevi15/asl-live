@@ -1,0 +1,52 @@
+# --- Data (rule 7: no dataset files in git, ever) -------------------------
+data/
+recordings/
+*.npy
+*.npz
+*.parquet
+
+# --- Models and checkpoints ----------------------------------------------
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+# ONNX is ignored everywhere except the small models GitHub Pages must serve
+# (CLAUDE.md "Large files": < 5 MB, committed under web/model/, no Git LFS).
+*.onnx
+!web/model/*.onnx
+# MediaPipe landmarker bundles are downloaded, never committed.
+*.task
+
+# --- Secrets (rule: never commit secrets) --------------------------------
+kaggle.json
+.env
+.env.*
+*.pem
+*.key
+
+# --- Experiment tracking --------------------------------------------------
+wandb/
+
+# --- Python ---------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# --- Notebooks ------------------------------------------------------------
+.ipynb_checkpoints/
+
+# --- Node -----------------------------------------------------------------
+node_modules/
+
+# --- OS / editor ----------------------------------------------------------
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

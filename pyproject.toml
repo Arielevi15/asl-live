@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "asl-live"
+version = "0.0.1"
+description = "Real-time recognition of fingerspelled ASL letters and isolated signs in the browser"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "Ariel" }]
+
+# Direct dependencies only, and only what the code in src/asl/ actually imports
+# today. Heavier pins (torch, onnx, onnxruntime, mediapipe, scikit-learn) are
+# added by the pull request that introduces the module needing them, so the
+# version can be verified in a real Colab runtime first.
+dependencies = [
+    "numpy==2.4.6",
+    "PyYAML==6.0.3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==9.1.1",
+    "ruff==0.16.10",
+    "pre-commit==4.6.2",
+]
+
+[project.urls]
+Homepage = "https://github.com/Arielevi15/asl-live"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--strict-markers --strict-config"
+# Skipped skeletons must stay visible in the summary: a skeleton that silently
+# reports nothing is indistinguishable from a passing test.
+xfail_strict = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-exclude = ["notebooks"]
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle
+    "F",   # pyflakes
+    "I",   # isort
+    "UP",  # pyupgrade
+    "B",   # flake8-bugbear
+]
+
+[tool.ruff.format]
+quote-style = "double"

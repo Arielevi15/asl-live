@@ -1,0 +1,9 @@
+{
+  "name": "asl-live-tests",
+  "private": true,
+  "type": "module",
+  "description": "No dependencies. This file exists only so Node treats the .js files as ES modules explicitly, instead of relying on syntax detection, and to name the test command in one place.",
+  "scripts": {
+    "test": "node --test \"tests/**/*.test.js\""
+  }
+}

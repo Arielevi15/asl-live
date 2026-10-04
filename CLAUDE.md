@@ -116,7 +116,7 @@ Planned; update as each is implemented.
 ```bash
 pip install -e .                                   # install package
 pytest -q                                          # Python tests
-node --test tests/                                 # JS parity tests
+node --test "tests/**/*.test.js"                   # JS parity tests (glob, not a dir)
 python -m asl.train --config configs/smoke.yaml    # 1 epoch on tests/fixtures/smoke/, then export; < 1 min
 python -m asl.train --config configs/letters_mlp.yaml
 python -m asl.evaluate --config configs/letters_mlp.yaml --split dev
@@ -140,7 +140,7 @@ Solo project, GitHub Flow. Professional but light: no develop/release branches.
 **Commits** (Conventional Commits, English)
 - Format: `<type>(<scope>): <imperative summary>`, max ~72 characters. Types: `feat`, `fix`, `refactor`, `test`, `docs`, `chore`, `ci`, `exp`, `perf`. Scopes: `features`, `data`, `model`, `train`, `eval`, `export`, `web`, `colab`, `ci`.
 - Example: `fix(features): mirror whole frame for left-dominant signers`.
-- One logical change per commit. Tests pass locally before every commit (`pytest -q` and `node --test tests/`).
+- One logical change per commit. Tests pass locally before every commit (`pytest -q` and `node --test "tests/**/*.test.js"`).
 - Body (when needed): why, not what.
 
 **Pull requests**

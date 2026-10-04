@@ -34,7 +34,7 @@ Do not edit anything yet. Write the plan and wait for the user's approval:
 ## 5. Verify
 ```bash
 pytest -q
-node --test tests/
+node --test "tests/**/*.test.js"
 ```
 Both green, parity within `1e-5`. Quote the actual output, never a remembered result.
 

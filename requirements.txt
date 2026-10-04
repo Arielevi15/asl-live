@@ -1,0 +1,17 @@
+# Colab lock file. Exact pins only (CLAUDE.md: pin every dependency).
+#
+# Install order in Colab:
+#   pip install -r requirements.txt && pip install -e .
+#
+# Python floor is 3.11 (see pyproject.toml). numpy 2.4.6 is the newest line
+# that still ships wheels for cp311 through cp314, so this holds whether Colab
+# is on 3.11, 3.12 or 3.13. Verify against the live Colab runtime in issue #1
+# and tighten the floor there.
+numpy==2.4.6
+PyYAML==6.0.3
+
+# Dev / CI tooling. Colab does not need these to train, but keeping one lock
+# file avoids the pins drifting apart.
+pytest==9.1.1
+ruff==0.16.10
+pre-commit==4.6.2

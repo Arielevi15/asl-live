@@ -186,8 +186,11 @@ version it moves and point at the updated fixtures.
   - Renaming to `.mjs` - diverges from the filename CLAUDE.md specifies.
   - Relying on Node syntax detection - works today on Node 24, undefined on
     older runners.
-- **Consequence:** The `node --test tests/` line in the CLAUDE.md "Commands"
-  section is wrong and an edit to it has been proposed to the user.
+- **Consequence:** The broken form appeared in four places. The user approved
+  the edit on 2026-10-04 and it was applied to the CLAUDE.md "Commands" block
+  and its per-commit rule, to the verify step of the `preprocessing-change`
+  skill, and to the PR template. `docs/decisions.md` still quotes the broken
+  form on purpose, to explain what was wrong.
 
 ---
 

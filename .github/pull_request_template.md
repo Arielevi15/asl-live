@@ -12,7 +12,7 @@
 
 ```
 pytest -q
-node --test tests/
+node --test "tests/**/*.test.js"
 ```
 
 ## Results
@@ -27,7 +27,7 @@ node --test tests/
 
 ## Checklist
 
-- [ ] Tests pass locally (`pytest -q`, `node --test tests/`)
+- [ ] Tests pass locally (`pytest -q`, `node --test "tests/**/*.test.js"`)
 - [ ] Conventional Commit messages, one logical change per commit
 - [ ] No dataset files, checkpoints, secrets, participant recordings or notebook outputs committed
 - [ ] Non-obvious decisions recorded in `docs/decisions.md`
